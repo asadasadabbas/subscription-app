@@ -5,7 +5,7 @@ https://github.com/asadasadabbas/subscription-app.git
 Setup Postgres Server:
 1. Download according to OS : https://www.postgresql.org/download/
 2. Install it.
-3. Assign username as 'postgres' and password <any> and save the credentials, will be needing it in further process.
+3. Assign username as 'postgres' and password whatever you prefer. Make sure to save the credentials, will be needing it in further process.
 
 Setup project into a directory:
 1. Clone the project from the url
