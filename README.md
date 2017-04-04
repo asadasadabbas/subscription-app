@@ -9,7 +9,7 @@ Setup Postgres Server:
 
 Setup project into a directory:
 1. Clone the project from the url
-2. Edit database.yml file with the username and password for the Psotgres that was setup while installing Postgres
+2. Edit database.yml file with the username and password for the Postgres that was setup while installing Postgres
 3. Save database.yml file
 4. Terminal :
 	cd <project_dir_name>
