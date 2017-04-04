@@ -1,0 +1,35 @@
+<p id="notice"><%= notice %></p>
+
+<h3>Subscription List</h3>
+
+<%= link_to 'New Subscription', new_subscription_path %> | 
+<%= link_to 'Back', dashboards_path %>
+
+<table class="table">
+  <thead>
+    <tr>
+      <th>User</th>
+      <th>Amount</th>
+      <th>Payment Date</th>
+      <th colspan="3" align="center">Actions</th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @subscriptions.each do |subscription| %>
+      <tr>
+        <td><%= subscription.name %></td>
+        <td><%= subscription.amount %></td>
+        <td><%= subscription.payment_date %></td>    
+        <td><%= link_to('', subscription, class: "fa fa-eye", title: 'View', :data => {:toggle=>"tooltip"}, 'data-original-title' => "View", 'data-placement' => 'top') %> </td>    
+        <!-- <td><%#= link_to 'View', subscription %></td> -->
+        <td><%= link_to('', edit_subscription_path(subscription), class: "fa fa-pencil", title: 'Edit', :data => {:toggle=>"tooltip"}, 'data-original-title' => "Edit", 'data-placement' => 'top') %></td>
+        <td><%= link_to('', subscription, method: :delete, data: { confirm: 'Are you sure?' }, class: "fa fa-trash-o", title: 'Delete', :data => {:toggle=>"tooltip"}, 'data-original-title' => "Delete", 'data-placement' => 'top') %>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+

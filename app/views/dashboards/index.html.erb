@@ -1,0 +1,29 @@
+<p id="notice"><%= notice %></p>
+
+<h3>Dashboard</h3>
+
+<table class="table">
+  <thead>
+    <tr>
+      <th>Year</th>
+      <th>Month</th>
+      <th>Revenue</th>
+      <th colspan="2">Action</th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @dashboards.each do |dashboard| %>
+      <tr>
+        <% month_id = Date::MONTHNAMES[dashboard.month]%>
+        <td><%= dashboard.year %></td>
+        <td><%= month_id %></td>
+        <td><%= dashboard.try(:revenue) %></td>
+        <td><%= link_to('', dashboard_path(year: dashboard.year, month: dashboard.month) , class: "fa fa-eye", title: 'View', :data => {:toggle=>"tooltip"}, 'data-original-title' => "View", 'data-placement' => 'top') %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+<%= link_to 'View Subscription List', subscriptions_path %>

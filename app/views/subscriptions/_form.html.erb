@@ -1,0 +1,8 @@
+<%= simple_form_for @subscription do |f| %>
+  <%= f.hidden_field  :uuid %>
+  <%= f.input :name %>
+  <%= f.input :amount, :input_html => {value: number_with_precision(f.object.amount, precision: 2) } %>
+  <%= f.input :payment_date, as: :date%>
+  <%= f.hidden_field  :month %>
+  <%= f.button :submit %>
+<% end %>

@@ -1,0 +1,24 @@
+<p id="notice"><%= notice %></p>
+
+<h3><%= Date::MONTHNAMES[@dashboard_monthly.first.month] %> Revenue Details</h3>
+
+<%= link_to 'Back', dashboards_path %>
+<table class="table">
+  <thead>
+    <tr>
+      <th>User</th>
+      <th>Amount</th>
+      <th>Payment Date</th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @dashboard_monthly.each do |monthly_user| %>
+      <tr>
+        <td><%= monthly_user.name %></td>
+        <td><%= monthly_user.amount %></td>
+        <td><%= monthly_user.payment_date %></td>    
+      </tr>
+    <% end %>
+  </tbody>
+</table>
